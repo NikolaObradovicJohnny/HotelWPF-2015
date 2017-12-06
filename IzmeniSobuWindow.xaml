@@ -1,0 +1,26 @@
+﻿<Window x:Class="NoviHotelWPF.IzmeniSobuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Izmeni Sobu" Height="300" Width="300" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Name="lblBrSobe" Content="Broj Sobe" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center"/>
+        <Label Name="lblTipSobe" Content="Tip Sobe" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Path=Broj}"  Name="tbBrojSobe" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <ComboBox SelectedItem="{Binding Path=TipS}" Name="combTipSobe" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Center" Width="120"/>
+        <CheckBox IsChecked="{Binding Path=MiniBar}" Name="chbMiniBar" Content="Mini bar" Grid.Column="1" HorizontalAlignment="Left" Margin="117,19,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <CheckBox IsChecked="{Binding Path=Tv}" Name="chbTv" Content="TV" Grid.Column="1" HorizontalAlignment="Left" Margin="17,19,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="10,13,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnSave_Click"/>
+        <Button Name="btnCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="110,13,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
+
+    </Grid>
+</Window>

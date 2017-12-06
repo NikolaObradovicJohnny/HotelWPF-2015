@@ -1,0 +1,16 @@
+﻿<Window x:Class="NoviHotelWPF.GostiWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Spisak svih gostiju u hotelu" Height="300" Width="350">
+    <Grid>
+        <DataGrid Name="dgGosti" HorizontalAlignment="Center" Margin="10,62,10,32" VerticalAlignment="Center" Height="156" Width="320" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime" Binding="{Binding Path=Ime}" Width="*" />
+                <DataGridTextColumn Header="Prezime" Binding="{Binding Path=Prezime}" Width="*" />
+                <DataGridTextColumn Header="JMBG" Binding="{Binding Path=JMBG}" Width="*" />
+                <DataGridTextColumn Header="Broj licne karte" Binding="{Binding Path=BrojLicneKarte}" Width="*" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>

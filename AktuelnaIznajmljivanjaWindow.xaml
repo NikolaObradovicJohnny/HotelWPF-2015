@@ -1,0 +1,48 @@
+﻿<Window x:Class="NoviHotelWPF.AktuelnaIznajmljivanjaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prikaz aktuelnih iznajmljivanja" Height="600" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <DataGrid Name="dgAktuelnaIznajmljivanja" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="164" Width="374" SelectionChanged="dgAktuelnaIznajmljivanja_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Broj sobe" Binding="{Binding Path=Soba.Broj}" Width="*" />
+                <DataGridTextColumn Header="Datum dolaska" Binding="{Binding Path=PocetniDatum}" Width="*" />
+                <DataGridTextColumn Header="Datum odlaska" Binding="{Binding Path=ZavrsniDatum}" Width="*" />
+                <DataGridTextColumn Header="Ukupna Cena" Binding="{Binding Path=UkupnaCena}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <ListView Name="lvGosti" ItemsSource="{Binding Path=Gosti}" DisplayMemberPath="{Binding Path=Gosti}" Grid.Column="1" HorizontalAlignment="Left" Height="165" Margin="10,42,0,0" Grid.Row="2" VerticalAlignment="Top" Width="374">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ime" CellTemplate="{Binding Path=Ime}" DisplayMemberBinding="{Binding Path=Ime}" Width="85">
+                    </GridViewColumn>
+                    <GridViewColumn Header="Prezime" CellTemplate="{Binding Path=Prezime}" DisplayMemberBinding="{Binding Path=Prezime}" Width="85" />
+                    <GridViewColumn Header="JMBG" CellTemplate="{Binding Path=JMBG}" DisplayMemberBinding="{Binding Path=JMBG}" Width="100"/>
+                    <GridViewColumn Header="Broj licne karte" CellTemplate="{Binding Path=BrojLicneKarte}" DisplayMemberBinding="{Binding Path=BrojLicneKarte}" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--<GroupBox Header="Gosti" Height="125" HorizontalAlignment="Left" Margin="144,324,0,0" Name="gbView" VerticalAlignment="Top" Width="200" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <Grid>
+                <ListView Margin="2,3,10,10" Name="lvGosti" ItemsSource="{Binding Path=Gosti}" DisplayMemberPath="{Binding Path=Gosti}" />
+            </Grid>
+        </GroupBox>-->
+        <Label Content="Spisak gostiju selektovanog iznajmljivanja" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+
+
+
+    </Grid>
+</Window>

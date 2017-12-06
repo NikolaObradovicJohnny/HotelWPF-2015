@@ -1,0 +1,24 @@
+﻿<Window x:Class="NoviHotelWPF.MeniAdministratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Glavni meni Administrator | Hotel" Height="330" Width="330">
+    <Grid>
+        <Menu Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch">
+            <MenuItem Header="Korisnici" Name="miKorisnici">
+                <MenuItem Name="PrikaziKorisnike" Header="Izlistaj korisnike" Click="PrikaziKorisnike_Click" />
+            </MenuItem>
+            <MenuItem Header="Sobe">
+                <MenuItem Name="PrikaziSobe" Header="Izlistaj sobe" Click="PrikaziSobe_Click"/>
+                <MenuItem Header="Prikazi tipove soba" HorizontalAlignment="Right" Width="159" Click="PrikaziTipoveSoba_Click"/>
+            </MenuItem>
+            <MenuItem Header="Cenovnik">
+                <MenuItem Name="PrikazCenovnik" Header="Prikazi cenovnik" Click="PrikazCenovnik_Click"/>
+            </MenuItem>
+            <MenuItem Header="Izvestaj">
+                <MenuItem Name="PrikazIzvestaja_Sobe" Header="Prikazi izvestaje o sobama" Click="PrikazIzvestaja_Sobe_Click"/>
+                <MenuItem Name="PrikazIzvestaja_Poseta" Header="Prikazi izvestaje o posetama hotela" Click="PrikazIzvestaja_Poseta_Click"/>
+            </MenuItem>
+            <MenuItem Header="Odjavi se" Name="Odjava" Click="Odjava_Click" />
+        </Menu>
+    </Grid>
+</Window>

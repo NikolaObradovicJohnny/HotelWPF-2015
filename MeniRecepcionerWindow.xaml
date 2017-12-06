@@ -1,0 +1,24 @@
+﻿<Window x:Class="NoviHotelWPF.MeniRecepcionerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Glavni meni Recepcioner | Hotel" Height="300" Width="300">
+    <Grid>
+        <Menu Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch">
+            <MenuItem Header="Iznajmljivanja">
+                <MenuItem Name="PrikaziIznajmljivanja" Header="Prikazi svih iznajmljivanja u hotelu" Click="PrikaziIznajmljivanja_Click"/>
+                <MenuItem Name="PrikaziAktuelnihIznajmljivanja" Header="Prikazi svih aktuelnih iznajmljivanja" Click="PrikaziAktuelnihIznajmljivanja_Click"/>
+            </MenuItem>
+            <MenuItem Header="Gosti">
+                <MenuItem Name="PrikaziGoste" Header="Prikazi goste" Click="PrikaziGoste_Click"/>
+            </MenuItem>
+            <MenuItem Header="Izvestaj">
+                <MenuItem Name="PrikazIzvestaja_Sobe" Header="Prikazi izvestaje o sobama" Click="PrikazIzvestaja_Sobe_Click"/>
+                <MenuItem Name="PrikazIzvestaja_Poseta" Header="Prikazi izvestaje o posetama hotela" Click="PrikazIzvestaja_Poseta_Click"/>
+            </MenuItem>
+            <MenuItem Header="Odjavi se" Name="Odjava" Click="Odjava_Click" />
+
+
+        </Menu>
+        
+    </Grid>
+</Window>

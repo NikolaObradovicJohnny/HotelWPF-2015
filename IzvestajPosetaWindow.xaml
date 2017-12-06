@@ -1,0 +1,9 @@
+﻿<Window x:Class="NoviHotelWPF.IzvestajPosetaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        Title="Izvestaj o posetama hotela" Height="300" Width="300" WindowState="Maximized">
+    <Grid>
+        <my:CrystalReportsViewer Name="poseteViewer" Margin="0,0,14,12" />
+    </Grid>
+</Window>

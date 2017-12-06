@@ -1,0 +1,9 @@
+﻿<Window x:Class="NoviHotelWPF.IzvestajSobeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        Title="Izvestaj svih soba u hotelu" Height="892" Width="949" WindowState="Maximized">
+    <Grid>
+        <my:CrystalReportsViewer Name="sobeViewer" Margin="0,0,14,12" />
+    </Grid>
+</Window>

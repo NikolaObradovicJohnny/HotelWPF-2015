@@ -1,0 +1,56 @@
+﻿<Window x:Class="NoviHotelWPF.SobeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prikaz svih soba" Height="400" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Label Content="Pretraga: " HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox Name="tbUneto" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="23" Margin="76,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="unesi..." VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnSearch" Content="Klik!" Grid.Column="2" HorizontalAlignment="Left" Margin="10,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+
+
+        <RadioButton Name="rbSlobodneSobe" Content="Slobodne sobe" HorizontalAlignment="Left" Margin="48,14,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Click="rbSlobodneSobe_Click"/>
+        <RadioButton Name="rbZauzeteSobe" Grid.ColumnSpan="2" Content="Zauzete sobe" Grid.Column="1" HorizontalAlignment="Left" Margin="85,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Click="rbZauzeteSobe_Click"/>
+
+
+        <DataGrid IsReadOnly="True" Name="dgSobe" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch" Grid.ColumnSpan="3" SelectionChanged="dgSobe_SelectionChanged" Grid.Row="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Broj" Binding="{Binding Path=Broj}" Width="50" />
+                <DataGridTextColumn Header="Tip" Binding="{Binding Path=TipS.Naziv}" Width="2*" />
+                <DataGridCheckBoxColumn Header="Tv" Binding="{Binding Path=Tv}" Width="*" />
+                <DataGridCheckBoxColumn Header="MiniBar" Binding="{Binding Path=MiniBar}" Width="*" />
+            </DataGrid.Columns>
+            <!--grupisanje po tipu .....ispod.......-->
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
+        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="12,8,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="btnAdd_Click" />
+        <Button Name="btnEdit" Content="Edit" Grid.Column="1" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" IsEnabled="{Binding Path=IsButtonEnabled}"/>
+        <Button Name="btnDelete" Content="Delete" Grid.Column="2" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="btnDelete_Click" IsEnabled="{Binding Path=IsButtonEnabled}"/>
+        <Menu Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch">
+            <MenuItem Header="Tipovi soba">
+                <MenuItem Name="IzlistajTipoveSoba" Header="Izlistaj tipove" Click="IzlistajTipoveSoba_Click"/>
+            </MenuItem>
+        </Menu>
+        <!--<RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="55,17,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <RadioButton Grid.ColumnSpan="2" Content="RadioButton" Grid.Column="1" HorizontalAlignment="Left" Margin="83,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100"/>-->
+    </Grid>
+</Window>
